@@ -1,0 +1,32 @@
+h1 <center> #{country.Name} </center>
+h1 <center> #{country.LocalName} </center>
+
+br
+p1 Столица страны: 
+a(href=`/cities/${capital.ID}`) #{capital.Name} <br>
+p Находится на континенте: #{country.Continent} <br>
+p Находится в регионе: #{country.Region} <br>
+p Занимаемая площадь: #{country.SurfaceArea} <br>
+p Год независимости: #{country.IndepYear} <br>
+p Ожидаемая продолжительности жизни: #{country.LifeExpectancy} <br>
+p Год независимости: #{country.IndepYear} <br>
+p Количество населения: #{country.Population} <br>
+b
+p Тип правительства: #{country.GovernmentForm} <br>
+p Глава правительства: #{country.HeadOfState} <br>
+b
+p Код страны: #{country.Code} <br>
+p Дополнительный код страны: #{country.Code2} <br>
+
+each iter in cities
+    a(href=`/cities/${iter.dataValues.ID}`)= iter.dataValues.Name + ' ' + iter.dataValues.Population
+    br
+
+
+p Распространённые языки
+br
+each iter in languages
+    p1 Название языка: #{iter.dataValues.Language} <br>- Является ли официальным #{iter.dataValues.IsOfficial === 'T'? 'Да': 'Нет'} <br>
+    p1    Количество носителей языка: #{Math.ceil(iter.dataValues.Percentage * country.Population / 100)}
+    br
+    br

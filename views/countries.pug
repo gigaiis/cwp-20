@@ -1,0 +1,13 @@
+h1 Countries [#{25 * (pageNumber - 1) + 1}] - [#{25 * pageNumber}]
+
+- var count = 25 * (pageNumber - 1)
+each iter in countries
+    - count = count + 1
+    a(href=`/countries/${iter.Code}`)= count + ' ' + iter.Name + ' ' + iter.Continent
+    br
+
+br
+br
+
+- for (let i=1; i <= countPages; i++)
+    a(href=`/countries/?page=${i}`)= i + ' '

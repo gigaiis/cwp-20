@@ -1,7 +1,0 @@
-{
-    "db": "world",
-    "login": "root",
-    "password": "11111",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
-}

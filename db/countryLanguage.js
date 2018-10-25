@@ -1,23 +1,27 @@
 module.exports = (sequelize, connection) =>{
     return connection.define('countrylanguage', {
-        CountryCode: {
+        CountryCode:
+        {
             primaryKey: true,
             type: sequelize.STRING(3),
             allowNull: false,
             defaultValue: ''
         },
-        Language: {
+        Language:
+        {
             primaryKey: true,
             type: sequelize.STRING(35),
             allowNull: false,
             defaultValue: ''
         },
-        IsOfficial: {
+        IsOfficial:
+        {
             type: sequelize.ENUM('T','F'),
             allowNull: false,
             defaultValue: 'F'
         },
-        Percentage: {
+        Percentage:
+        {
             type: sequelize.FLOAT(4,1),
             allowNull: false,
             defaultValue: 0.0

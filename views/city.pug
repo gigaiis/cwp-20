@@ -1,0 +1,16 @@
+h1 Информация о городе
+
+p Город: #{city.Name}
+p Код страны: #{city.CountryCode}
+p Округ: #{city.District}
+p Население: #{city.Population}
+
+h1 Страна #{country.Name}
+
+p Находится на континенте: #{country.Continent} <br>
+p Официальные языки:
+each iter in languages
+    p Название языка: #{iter.dataValues.Language}
+
+p1 Столица
+a(href=`/cities/${capital.ID}`) #{capital.Name} <br>
